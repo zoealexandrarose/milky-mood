@@ -1,12 +1,8 @@
 import styled from 'styled-components'
+import {Marginals} from '../styles'
 
 export const Footer = styled.footer`
-  box-sizing: border-box;
-  display: flex;
-  pointer-events: none;
-  position: fixed;
-  width: 100vw;
-  z-index: 1;
+  ${Marginals}
   bottom: 0;
   justify-content: space-between;
   padding: 15px;
