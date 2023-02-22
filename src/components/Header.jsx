@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {ReactComponent as LogoSVG} from './logo.svg'
+import {ReactComponent as LogoSVG} from '../assets/logo.svg'
 
 export const Logo = styled(LogoSVG)`
   height: auto;
@@ -17,3 +17,15 @@ export const Header = styled.header`
   justify-content: center;
   padding: 30px;
 `
+
+function HeaderComponent() {
+  return (
+    <div>
+      <Header>
+        <Logo title="Milky Mood Logo" />
+      </Header>
+    </div>
+  )
+}
+
+export default HeaderComponent
