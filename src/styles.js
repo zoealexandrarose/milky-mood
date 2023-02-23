@@ -1,6 +1,15 @@
 import styled, {createGlobalStyle, css} from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+@keyframes glow {
+  0% {
+    box-shadow: rgb(252, 210, 23) 0 0 0px;
+  }
+  100% {
+    box-shadow: rgb(252, 210, 23) 0 10px 100px;
+  }
+}
+
 body {
   color: #FBFBFB;
   height: 100vh;
@@ -23,7 +32,11 @@ export const Marginals = css`
   width: 100vw;
   z-index: 1;
 `
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div.attrs(({$isTogether}) => ({
+  style: {
+    animation: $isTogether ? 'glow 3s infinite alternate' : 'none'
+  }
+}))`
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -31,7 +44,11 @@ export const ImageContainer = styled.div`
   width: 400px;
 `
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section.attrs(({$color}) => ({
+  style: {
+    backgroundColor:`hsl(${$color}, 79%, 53%)` // remember - camel case here
+  }
+}))`
   display: flex;
   justify-content: center;
   align-items: center;
