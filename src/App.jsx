@@ -46,7 +46,7 @@ function App() {
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove}> {/* touch event for mobile users */}
       <ImageContainer>
         {matrix.map(([x,y], index) => (
-          <ImgBox key={index} x={x} y={y}/>
+          <ImgBox key={index} x={x} y={y} percent={distance}/>
         ))}
       </ImageContainer>
       </Wrapper>
