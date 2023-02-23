@@ -1,8 +1,9 @@
 import {Image} from './styles'
 
-function ImgBox() {
+function ImgBox({x}) {
+  // console.log(x)
   return (
-    <Image />
+    <Image $initialX={x} />
   )
 }
 
