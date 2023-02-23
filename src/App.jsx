@@ -8,6 +8,25 @@ function App() {
   const [distance, setDistance] = useState(1)
 
   const easing = (num) => Math.pow(num, 3)
+  const calculateDistance = ([x,y]) => {
+    // time for some trigonometry
+    const center = [window.innerWidth / 2, window.innerHeight / 2] // gives us the halfway point
+    const maxHypot = Math.hypot(center[0], center[1])
+    const hypot = Math.hypot(center[0] - x, center[1] - y)
+    const distance = hypot / maxHypot // will evaulate to a number between 0 and 1
+    const easeDistance = easing(distance)
+    setDistance(easeDistance)
+  }
+
+  const handleMove = ({clientX, clientY}) => {
+    calculateDistance([clientX, clientY])
+  }
+
+  const handleTouchMove = ({touches}) => {
+    calculateDistance([touches[0].clientX, touches[0].clientY])
+  }
+
+  console.log(distance)
 
   const matrix = [
     [0,0], [1,0], [2,0], [3,0],
@@ -24,7 +43,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Footer />
-      <Wrapper>
+      <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove}> {/* touch event for mobile users */}
       <ImageContainer>
         {matrix.map(([x,y], index) => (
           <ImgBox key={index} x={x} y={y}/>
