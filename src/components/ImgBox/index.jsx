@@ -1,9 +1,9 @@
 import {Image} from './styles'
 
-function ImgBox({x}) {
+function ImgBox({x, y}) {
   // console.log(x)
   return (
-    <Image $initialX={x} />
+    <Image $initialX={x} $initialY={y}/>
   )
 }
 

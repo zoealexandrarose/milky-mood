@@ -21,8 +21,8 @@ function App() {
       <Footer />
       <Wrapper>
       <ImageContainer>
-        {matrix.map((x, index) => (
-          <ImgBox key={index} x={x}/>
+        {matrix.map(([x,y], index) => (
+          <ImgBox key={index} x={x} y={y}/>
         ))}
       </ImageContainer>
       </Wrapper>
