@@ -1,8 +1,13 @@
+import {useState} from 'react'
 import { GlobalStyle, ImageContainer, Wrapper } from "./styles"
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ImgBox from'./components/ImgBox'
+
 function App() {
+  const [distance, setDistance] = useState(1)
+
+  const easing = (num) => Math.pow(num, 3)
 
   const matrix = [
     [0,0], [1,0], [2,0], [3,0],
