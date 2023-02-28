@@ -1,8 +1,10 @@
 import {useState} from 'react'
-import { GlobalStyle, ImageContainer, Wrapper, Button } from "./styles"
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ImgBox from'./components/ImgBox'
+import Modal from './components/Modal'
+import { GlobalStyle, ImageContainer, Wrapper, Button } from "./styles"
+
 
 function App() {
   const [distance, setDistance] = useState(1)
@@ -41,6 +43,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      <Modal />
       <Header />
       <Footer />
       <Wrapper
