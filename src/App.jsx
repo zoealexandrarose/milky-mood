@@ -49,6 +49,7 @@ function App() {
         $color={Math.round(240 - distance * 40)}
       >
       <ImageContainer $isTogether={distance < 0.001}>
+        <button></button>
         {matrix.map(([x,y], index) => (
           <ImgBox key={index} x={x} y={y} percent={distance}/>
         ))}
