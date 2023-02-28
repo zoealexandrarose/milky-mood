@@ -8,6 +8,7 @@ import { GlobalStyle, ImageContainer, Wrapper, Button } from "./styles"
 
 function App() {
   const [distance, setDistance] = useState(1)
+  const [showModal, setShowModal] = useState(false)
 
   const matrix = [
     [0,0], [1,0], [2,0], [3,0],
@@ -39,11 +40,14 @@ function App() {
 
   console.log(distance)
 
+  const toggleModal = () => {
+    setShowModal((showModal) => !showModal)
+  }
 
   return (
     <div className="App">
       <GlobalStyle />
-      <Modal />
+      {showModal && <Modal />}
       <Header />
       <Footer />
       <Wrapper
@@ -52,7 +56,7 @@ function App() {
         $color={Math.round(240 - distance * 40)}
       >
       <ImageContainer $isTogether={distance < 0.001}>
-        <Button>Sign up for updates</Button>
+        <Button onClick={toggleModal}>Sign up for updates</Button>
         {matrix.map(([x,y], index) => (
           <ImgBox key={index} x={x} y={y} percent={distance}/>
         ))}

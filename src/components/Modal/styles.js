@@ -10,5 +10,20 @@ background: #FBFBFB;
 box-sizing: border-box;
 padding: 60px;
 max-width: 800px;
-width: calc(100vw - 60px)
+width: calc(100vw - 60px);
+z-index: 3;
+
+@media (max-width: 700px) {
+  padding: 30px;
+  width: calc(100vw - 30px);
+}
+`
+
+export const BG = styled.div`
+  background: rgba(0,0,0,0.5);
+  cursor: pointer;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
 `

@@ -1,7 +1,11 @@
+import {Modal, BG} from './styles'
 
 function ModalComponent() {
   return (
-    <div></div>
+    <div>
+      <Modal />
+      <BG />
+    </div>
   )
 }
 
