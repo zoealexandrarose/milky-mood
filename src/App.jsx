@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { GlobalStyle, ImageContainer, Wrapper } from "./styles"
+import { GlobalStyle, ImageContainer, Wrapper, Button } from "./styles"
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ImgBox from'./components/ImgBox'
@@ -49,7 +49,7 @@ function App() {
         $color={Math.round(240 - distance * 40)}
       >
       <ImageContainer $isTogether={distance < 0.001}>
-        <button></button>
+        <Button>Sign up for updates</Button>
         {matrix.map(([x,y], index) => (
           <ImgBox key={index} x={x} y={y} percent={distance}/>
         ))}
