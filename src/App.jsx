@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      {showModal && <Modal />}
+      {showModal && <Modal toggleModal={toggleModal}/>}
       <Header />
       <Footer />
       <Wrapper

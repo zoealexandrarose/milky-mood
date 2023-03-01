@@ -1,10 +1,10 @@
 import {Modal, BG} from './styles'
 
-function ModalComponent() {
+function ModalComponent({toggleModal}) {
   return (
     <div>
       <Modal />
-      <BG />
+      <BG onClick={toggleModal}/>
     </div>
   )
 }
