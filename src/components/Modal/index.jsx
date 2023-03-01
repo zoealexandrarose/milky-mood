@@ -1,9 +1,11 @@
-import {Modal, BG} from './styles'
+import {Modal, BG, Close} from './styles'
 
 function ModalComponent({toggleModal}) {
   return (
     <div>
-      <Modal />
+      <Modal>
+        <Close onClick={toggleModal}/>
+      </Modal>
       <BG onClick={toggleModal}/>
     </div>
   )
