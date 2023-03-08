@@ -5,6 +5,9 @@ import Form from '../Form'
 function ModalInner() {
   const [showSuccess, setShowSuccess] = useState(false)
 
+  const handleSuccess = () => {
+    setShowSuccess(true)
+  }
   return (
     <Container>
 
@@ -17,7 +20,7 @@ function ModalInner() {
      <>
       <h3>Sign Up</h3>
       <p>Join our newsletter to be notified of when pre-release tickets for our first ever world tour go on sale.</p>
-      <Form />
+      <Form handleSuccess={handleSuccess}/>
      </>
     )}
 

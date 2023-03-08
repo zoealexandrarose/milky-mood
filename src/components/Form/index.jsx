@@ -1,7 +1,7 @@
 
-function FormComponent() {
+function FormComponent({handleSuccess}) {
   return (
-    <form>
+    <form onSubmit={handleSuccess}>
       <label for="name">Name: </label>
       <input type="text" name="name" required autoComplete="off"/>
 
