@@ -49,7 +49,7 @@ function App() {
     <div className="App">
       <GlobalStyle />
       {showModal && <Modal toggleModal={toggleModal}>
-        <ModalInner/>
+        <ModalInner />
       </Modal>}
       <Header />
       <Footer />
