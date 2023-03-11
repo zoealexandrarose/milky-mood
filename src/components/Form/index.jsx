@@ -18,15 +18,15 @@ function FormComponent({handleSuccess}) {
       onSubmit={handleSuccess}
       validationSchema={schema}
     >
-      {(props) => (
+      {({errors, touched}) => (
         <Form>
         <label>Name: </label>
         <Field type="text" name="name" autoComplete="off"/>
-        {props.errors && <div>{props.errors.name}</div>}
+        {touched.name && errors && <div>{errors.name}</div>}
 
         <label>Email address: </label>
         <Field type="text" name="email" autoComplete="off"/>
-        {props.errors && <div>{props.errors.email}</div>}
+        {touched.email && errors && <div>{errors.email}</div>}
 
 
         <button type="submit">Submit</button>
