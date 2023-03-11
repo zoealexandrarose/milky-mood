@@ -1,15 +1,47 @@
+import * as Yup from 'yup'
+import {Formik, Form, Field} from 'formik'
 
 function FormComponent({handleSuccess}) {
+  // validation and error handling - like with Rails/Ruby
+  const schema = Yup.object().shape({
+    name: Yup.string().required('Required field'),
+    email: Yup.string().email('Must be a valid email address').required('Required field')
+  })
+
   return (
-    <form onSubmit={handleSuccess}>
-      <label for="name">Name: </label>
-      <input type="text" name="name" required autoComplete="off"/>
+    <Formik
+      initialValues={{
+        name: "",
+        email: ""
+      }}
 
-      <label for="email">Email address: </label>
-      <input type="text" name="email" required autoComplete="off"/>
+      onSubmit={handleSuccess}
+      validationSchema={schema}
+    >
+      {(props) => (
+        <Form>
+        <label>Name: </label>
+        <Field type="text" name="name" autoComplete="off"/>
+        {props.errors && <div>{props.errors.name}</div>}
 
-      <button type="submit">Submit</button>
-    </form>
+        <label>Email address: </label>
+        <Field type="text" name="email" autoComplete="off"/>
+        {props.errors && <div>{props.errors.email}</div>}
+
+
+        <button type="submit">Submit</button>
+
+      </Form>
+      )}
+    </Formik>
+  //   <form onSubmit={handleSuccess}>
+  //     <label for="name">Name: </label>
+  //     <input type="text" name="name" required autoComplete="off"/>
+
+  //     <label for="email">Email address: </label>
+  //     <input type="text" name="email" required autoComplete="off"/>
+
+  //   </form>
   )
 }
 
