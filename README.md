@@ -1,1 +1,1 @@
-REact, Javascript, and HTML
+React, Javascript, and HTML
