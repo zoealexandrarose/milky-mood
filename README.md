@@ -1,1 +1,1 @@
-just another lil React project
+REact, Javascript, and HTML
